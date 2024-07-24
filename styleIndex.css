@@ -1,13 +1,29 @@
-.container-fluid{
+html, body {
+    overflow-x: hidden;
     margin: 0;
-    padding: 0.2rem;
-    font-size: 1.2rem;
-    
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
-.navbar-brand{
-    padding-right: 7rem;
+
+/* nav bar */
+.navbar{
+    padding: 0;
+}
+#img1{
+    height: 3rem;
+    width: 9rem;
+    margin: 0;
     padding-left: 1rem;
 }
+.container-fluid{
+    margin: 0;
+    padding: 0rem;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+}
+
 .nav-item{
     padding-left: 1rem;
 }
@@ -31,6 +47,32 @@ padding-left: 1rem;
 .dropdown{
 margin-left:0rem ;
 }
+
+@media only screen and (max-width: 700px){
+   
+    .buttons{
+margin: auto;
+display: flex;
+margin: 2vw;
+width: fit-content;
+}
+.nav-buttons{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+#login{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+}
+
+
+/* main heading */
 h1{
     margin-top: 5rem;
     display: flex;
@@ -44,6 +86,18 @@ h3{
     font-size: 1.4rem;
     margin-bottom: 5rem;
 } 
+@media only screen and (max-width: 700px){
+h1{
+margin-top: 2vw;    font-size: 12vw;
+    padding: 3vw 2vw;
+
+}
+h3{
+    font-size: 9vw;
+    padding: 0vw 2vw;
+margin-bottom: 15vw;
+}
+}
 
 /* For the search bar */
 #search-container{
@@ -104,7 +158,42 @@ h4{
     margin-bottom: 3rem;
 }
 
+@media only screen and (max-width: 700px){
+    .search-bar {
+    flex-wrap: wrap;
+    margin-top: 0;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input,
+    .search-bar select {
+border: 1px solid black;
+margin: 1vw;
+width:fit-content;
+padding: 4vw;
+font-size: 6vw;
+    }
+
+    .divider {
+        height: 0px;
+        width: 0px;
+        margin: 0px;
+    }
+
+.options{
+    font-size: 4vw;
+}
+.search-bar button {
+    font-size: 7vw;
+    padding: 3vw 8vw;
+}
+}
 /* for the scrollable cards */
+h4{
+    margin-top: 7rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 .carousel-inner {
     padding: 1em;
   }
@@ -123,7 +212,7 @@ h4{
     transform: translateY(-50%);
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     .carousel-item {
       margin-right: 0;
       flex: 0 0 33.333333%;
@@ -143,10 +232,14 @@ h4{
     height: auto; 
   }
   
-  @media (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     .card .img-wrapper {
       height: 17em;
     }
+h4{
+    margin-top: 30vw;
+    padding: 3vw;
+}
   }
   
   /* View button */
@@ -165,12 +258,19 @@ margin-top: 1rem;
     font-weight: bold;
     margin-bottom: 4rem;
   }
-
+  @media only screen and (max-width: 600px) {
+    .view-all-comp .button{
+        font-size: 6vw;
+padding: 2vw 6vw;
+}
+  }
   /* Events screen */
-
+img{}
 h2 {
     font-weight: bold;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .card-header {
@@ -193,23 +293,24 @@ h2 {
 .footer {
     background-color: #f8f9fa;
     border-top: 1px solid #e9ecef;
-    padding: 20px 0;
 }
-
-.footer img {
-    max-height: 50px;
+#connect-with-us{
+    padding: 0;
 }
-
-.footer h5 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+.footer #p1{
+    font-size: 2rem;
+    margin-left: 1rem;
+    padding: 0;
 }
-
 .footer p {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     color: #6c757d;
 }
-
+#p2{
+    display: flex;
+    justify-content: start;
+padding-left: 1rem;
+}
 .footer ul {
     list-style: none;
     padding: 0;
@@ -222,18 +323,40 @@ h2 {
 .footer ul li a {
     text-decoration: none;
     color: #007bff;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
 }
 
 .footer ul li a:hover {
     text-decoration: underline;
 }
-
+.social-icons{
+    margin-left: 1rem;
+}
 .footer .social-icons a {
     color: #6c757d;
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
+    font-size: 2rem;
+    margin: 0.8rem;
 }
 
 .footer .social-icons a:hover {
-    color: #007bff;
+    color: #041527;
+}
+#img2{
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+.footer h2{
+    font-size: 10vw;
+}
+.footer #p1{
+    display: flex;
+    justify-content: center;
+}
+.footer .social-icons{
+    display: flex;
+    justify-content: center;
+}
 }
