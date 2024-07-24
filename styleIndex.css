@@ -149,3 +149,91 @@ h4{
     }
   }
   
+  /* View button */
+  .view-all-comp {
+display: flex;
+justify-content: center;
+margin: auto;
+margin-top: 1rem;
+  }
+  .view-all-comp .button{
+    color: blue;
+    border-radius: 2rem;
+    border-color: blue;
+    font-size: 1.3rem;
+    padding: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+  }
+
+  /* Events screen */
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tags .badge {
+    margin-right: 0.5rem;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 20px 0;
+}
+
+.footer img {
+    max-height: 50px;
+}
+
+.footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons a {
+    color: #6c757d;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.footer .social-icons a:hover {
+    color: #007bff;
+}
