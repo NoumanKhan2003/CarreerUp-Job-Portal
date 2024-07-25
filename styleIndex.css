@@ -10,6 +10,8 @@ html, body {
 /* nav bar */
 .navbar{
     padding: 0;
+    border: 1px groove black;
+
 }
 #img1{
     height: 3rem;
