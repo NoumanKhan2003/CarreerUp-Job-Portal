@@ -49,6 +49,12 @@ padding-left: 1rem;
 .dropdown{
 margin-left:0rem ;
 }
+.fa-user-circle-o{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: rgb(16, 11, 72);
+}
 
 @media only screen and (max-width: 700px){
    

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleProfile.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Profile Management</h1>
+            <nav>
+                <ul>
+                    <li><a href="#job-seekers">Job Seekers</a></li>
+                    <li><a href="#employers">Employers</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="job-seekers">
+            <h2>Job Seekers</h2>
+            <form class="profile-form">
+                <h3>Personal Details</h3>
+                <label for="js-name">Name</label>
+                <input type="text" id="js-name" name="js-name" placeholder="Enter your name">
+
+                <label for="js-email">Email</label>
+                <input type="email" id="js-email" name="js-email" placeholder="Enter your email">
+
+                <h3>Skills</h3>
+                <label for="js-skills">Skills</label>
+                <input type="text" id="js-skills" name="js-skills" placeholder="Enter your skills">
+
+                <h3>Experience</h3>
+                <label for="js-experience">Experience</label>
+                <textarea id="js-experience" name="js-experience" placeholder="Enter your experience"></textarea>
+
+                <h3>Education</h3>
+                <label for="js-education">Education</label>
+                <textarea id="js-education" name="js-education" placeholder="Enter your education"></textarea>
+
+                <h3>Certifications</h3>
+                <label for="js-certifications">Certifications</label>
+                <textarea id="js-certifications" name="js-certifications" placeholder="Enter your certifications"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="employers">
+            <h2>Employers</h2>
+            <form class="profile-form">
+                <h3>Company Information</h3>
+                <label for="em-company">Company Name</label>
+                <input type="text" id="em-company" name="em-company" placeholder="Enter company name">
+
+                <label for="em-industry">Industry</label>
+                <input type="text" id="em-industry" name="em-industry" placeholder="Enter industry">
+
+                <h3>Contact Details</h3>
+                <label for="em-email">Email</label>
+                <input type="email" id="em-email" name="em-email" placeholder="Enter contact email">
+
+                <h3>Job Posting History</h3>
+                <label for="em-job-history">Posted Jobs</label>
+                <textarea id="em-job-history" name="em-job-history" placeholder="Enter job posting history"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
