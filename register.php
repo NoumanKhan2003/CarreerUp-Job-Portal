@@ -57,16 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Hash the password
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                // Debugging: Log variables
-                // error_log("Inserting data: name=$name, mobile=$mobile, email=$email");
 
-                // Prepare and execute the statement
                 $stmt = $conn->prepare("INSERT INTO Job_Seekers (name, mobile, email, password) VALUES (?, ?, ?, ?)");
                 if ($stmt) {
                     $stmt->bind_param("ssss", $name, $mobile, $email, $hashedPassword);
 
                     if ($stmt->execute()) {
-                        echo "Registration successful!";
+                        echo "Registration successful!<br>";
                         unset($_SESSION['otp']);
                         unset($_SESSION['otp_email']);
                     } else {

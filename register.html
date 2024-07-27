@@ -32,7 +32,7 @@
                             </div>
                             <p id="message"></p>
                         </form>
-                        <div id="otpForm" style="display: none;">
+                        <div id="otpForm">
                             <p>Enter OTP:</p>
                             <input type="number" id="otpInput" placeholder="Enter OTP" required>
                             <button class="r-registration-submit-button" type="button" id="verifyOtpButton">Verify OTP</button>
@@ -51,7 +51,6 @@
             otpButton.addEventListener("click", function() {
                 let formData = new FormData(document.getElementById("registrationForm"));
 
-                // Debug: Log form data
                 for (let [key, value] of formData.entries()) {
                     console.log(`${key}: ${value}`);
                 }
