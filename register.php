@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_SESSION['otp']) && isset($_SESSION['otp_email'])) {
             $storedOtp = $_SESSION['otp'];
             $storedEmail = $_SESSION['otp_email'];
-
+ 
             if ($email == $storedEmail && $enteredOtp == $storedOtp) {
                 // Data entry code
                 $dbname = 'Job_Portal';
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                 // Debugging: Log variables
-                error_log("Inserting data: name=$name, mobile=$mobile, email=$email");
+                // error_log("Inserting data: name=$name, mobile=$mobile, email=$email");
 
                 // Prepare and execute the statement
                 $stmt = $conn->prepare("INSERT INTO Job_Seekers (name, mobile, email, password) VALUES (?, ?, ?, ?)");
