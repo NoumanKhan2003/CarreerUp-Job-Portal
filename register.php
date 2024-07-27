@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt->bind_param("ssss", $name, $mobile, $email, $hashedPassword);
 
                     if ($stmt->execute()) {
-                        echo "Registration successful!<br>";
+                        echo "Registration successful!";
                         unset($_SESSION['otp']);
                         unset($_SESSION['otp_email']);
                     } else {

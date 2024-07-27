@@ -1,21 +1,17 @@
 <?php
 include 'config.php';
 
-// Create database if it doesn't exist
-$dbname = "Feedback_DB";
+$dbname = "job_portal";
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 if ($conn->query($sql) === TRUE) {
-    // Database created successfully or already exists
 } else {
     echo json_encode(["status" => "error", "message" => "Error creating database: " . $conn->error]);
     exit;
 }
 
-// Select the database
 $conn->select_db($dbname);
 
-// Create table if it doesn't exist
-$sql = "CREATE TABLE IF NOT EXISTS Feedback (
+$sql = "CREATE TABLE IF NOT EXISTS feedback (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     age INT NOT NULL,
@@ -27,13 +23,11 @@ $sql = "CREATE TABLE IF NOT EXISTS Feedback (
 )";
 
 if ($conn->query($sql) === TRUE) {
-    // Table created successfully or already exists
 } else {
     echo json_encode(["status" => "error", "message" => "Error creating table: " . $conn->error]);
     exit;
 }
 
-// Process form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $age = $conn->real_escape_string($_POST['age']);
@@ -42,24 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rating = $conn->real_escape_string($_POST['rating']);
     $comments = $conn->real_escape_string($_POST['comments']);
 
-    // Insert data into the database
-    $sql = "INSERT INTO Feedback (name, age, email, phone, rating, comments) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO feedback (name, age, email, phone, rating, comments) VALUES (?, ?, ?, ?, ?, ?)";
 
-    // Prepare and bind
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sissss", $name, $age, $email, $phone, $rating, $comments);
 
-    // Execute the query
     if ($stmt->execute()) {
-        echo json_encode(["status" => "success", "message" => "Feedback submitted successfully!"]);
+        echo json_encode(["status" => "success", "message" => "feedback submitted successfully!"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
     }
 
-    // Close statement
     $stmt->close();
 }
 
-// Close connection
 $conn->close();
 ?>
