@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error sending OTP: " . error_get_last()['message'];
         }
     } 
-
     // Check if it's an OTP verification request
     elseif (isset($_POST['otp']) && isset($_POST['email'])) {
         $email = $conn->real_escape_string($_POST['email']);
@@ -40,13 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $conn->query("CREATE DATABASE IF NOT EXISTS $dbname");
                 $conn->select_db($dbname);
 
-                $conn->query("CREATE TABLE IF NOT EXISTS Job_Seekers (
+                $conn->query("CREATE TABLE IF NOT EXISTS Employers (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     name VARCHAR(100) NOT NULL,
                     mobile VARCHAR(15) NOT NULL UNIQUE,
                     email VARCHAR(100) NOT NULL UNIQUE,
                     password VARCHAR(255) NOT NULL
-                    
                 )");
 
                 // Initialize variables
@@ -56,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $password = $conn->real_escape_string($_POST['password'] ?? '');
 
                 // Check if email already exists
-                $stmt = $conn->prepare("SELECT * FROM Job_Seekers WHERE email = ?");
+                $stmt = $conn->prepare("SELECT * FROM Employers WHERE email = ?");
                 if ($stmt) {
                     $stmt->bind_param("s", $email);
                     $stmt->execute();
@@ -69,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Email not found, proceed with registration
                         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                        $stmt = $conn->prepare("INSERT INTO Job_Seekers (name, mobile, email, password) VALUES (?, ?, ?, ?)");
+                        $stmt = $conn->prepare("INSERT INTO Employers (name, mobile, email, password) VALUES (?, ?, ?, ?)");
                         if ($stmt) {
                             $stmt->bind_param("ssss", $name, $mobile, $email, $hashedPassword);
 

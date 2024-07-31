@@ -43,60 +43,63 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let otpButton = document.getElementById("otpButton");
-            let otpForm = document.getElementById("otpForm");
-            let message = document.getElementById("message");
+   document.addEventListener("DOMContentLoaded", function() {
+    let otpButton = document.getElementById("otpButton");
+    let otpForm = document.getElementById("otpForm");
+    let message = document.getElementById("message");
 
-            otpButton.addEventListener("click", function() {
-                let formData = new FormData(document.getElementById("registrationForm"));
+    otpButton.addEventListener("click", function() {
+        let formData = new FormData(document.getElementById("registrationForm"));
 
-                for (let [key, value] of formData.entries()) {
-                    console.log(`${key}: ${value}`);
-                }
-
-                fetch('register.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(data => {
-                    console.log("Response from server:", data);
-                    if (data.includes("OTP sent successfully")) {
-                        message.textContent = "OTP sent successfully! Please check your email.";
-                        otpForm.style.display = 'block';
-                    } else {
-                        message.textContent = "Error sending OTP. Please try again. Server response: " + data;
-                    }
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                });
-            });
-
-            document.getElementById("verifyOtpButton").addEventListener("click", function() {
-                let otp = document.getElementById("otpInput").value;
-                let email = document.querySelector('input[name="email"]').value;
-                let formData = new URLSearchParams(new FormData(document.getElementById("registrationForm")));
-                formData.append('otp', otp);
-
-                fetch('register.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(data => {
-                    console.log("Response from server:", data); 
-                    message.textContent = data;
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                });
-            });
+        fetch('register.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("Response from server (OTP request):", data);
+            if (data.includes("OTP sent successfully")) {
+                message.textContent = "OTP sent successfully! Please check your email.";
+                otpForm.style.display = 'block';
+            } else {
+                message.textContent = "Error sending OTP. Please try again. Server response: " + data;
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
         });
+    });
+
+    document.getElementById("verifyOtpButton").addEventListener("click", function() {
+        let otp = document.getElementById("otpInput").value;
+        let formData = new URLSearchParams(new FormData(document.getElementById("registrationForm")));
+        formData.append('otp', otp);
+
+        fetch('register.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("Response from server (OTP verification):", data);
+            if (data.trim() === "Registration successful!") {
+                message.textContent = "Registration successful!";
+                setTimeout(function() {
+                    window.location.href = 'login.html';
+                }, 2000); 
+            } else {
+                message.textContent = data;
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    });
+});
+
     </script>
 </body>
 </html>
