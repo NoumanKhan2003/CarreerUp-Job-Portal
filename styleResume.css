@@ -1,37 +1,16 @@
-#nav {
-    background-color: antiquewhite;
-    border-color: black;
-    border-width: 5px;
-    border-style: double;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    position: relative;
-    transition: transform 0.5;
-  }
-  #nav:hover{
-  box-shadow: 2px 3px 10px rgb(18, 30, 37);
-  }
-  #nav a {
-    padding: 5px;
-  }
-  #nav a:hover {
-    background-color: rgb(12, 54, 4);
-    color: white;
-    border-radius: 20px;
-    transform: scale(1.1);
-  }
-  #logo{
-    height: 2rem;
-    border-radius: 50%;
-  } 
 
-  body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
-
+#heading{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin:  1rem ;
+    color: rgb(16, 23, 79);
+}
 .resume {
     display: flex;
     max-width: 900px;
@@ -39,11 +18,12 @@
     background: #fff;
     box-shadow: 0 0 10px black;
     border: 10px groove rgba(10, 34, 114, 0.909);
-transition: transform 0.3s;
+    transition: transform 0.3s;
 }
-.resume:hover{
+
+.resume:hover {
     box-shadow: 0 0 20px rgb(33, 26, 7);
-transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 .sidebar {
@@ -54,7 +34,7 @@ transform: scale(1.01);
     box-sizing: border-box;
 }
 
- .profile img {
+.profile img {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -64,9 +44,11 @@ transform: scale(1.01);
     transition: transform 0.3s;
     box-shadow: 0 0 15px black;
 }
-.profile img:hover{
+
+.profile img:hover {
     transform: scale(1.1);
 }
+
 .profile h1 {
     text-align: center;
     margin: 0;
@@ -109,43 +91,60 @@ transform: scale(1.01);
     margin-bottom: 10px;
 }
 
-#tech ul {
+ul {
     list-style-type: disc;
     padding-left: 20px;
- font-size: 1.4rem;
+    font-size: 1.4rem;
 }
 
 li {
     margin-bottom: 3px;
 }
-#tech li{
-    margin-bottom: -1rem;
-}
-.button{
+
+.buttons {
     display: flex;
     justify-content: center;
-    justify-content: space-evenly;
-    margin: 1rem;
+    margin: 20px 0;
 }
-footer{
+
+.buttons button {
+    font-size: 1.2rem;
+    background-color: rgb(183, 221, 237);
+    color: blue;
+    border: 2px solid blue;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 5px 1rem;
+}
+
+.buttons button:hover {
+    background-color: blue;
+    color: white;
+}
+
+footer {
     display: flex;
     font-size: 1rem;
     justify-content: center;
     background-color: rgb(0, 0, 0);
     color: white;
-  }
-  @media only screen and (max-width:600px){ 
+}
 
+@media only screen and (max-width: 600px) {
     .profile img {
         width: 30vw;
         height: 30vw;
     }
-    .sidebar{
+
+    .sidebar {
         width: 40%;
         padding: 3vw;
     }
-    .resume{
-        height: auto;
+
+    .resume {
         width: 100%;
     }
 
@@ -153,46 +152,35 @@ footer{
         font-size: 8vw;
         margin-bottom: 4vw;
     }
-    
+
     .profile h2 {
-       
-        font-size:7vw;
-    }
-    
-    .contact, .interests {
-        margin-top: 3rem;
-    }
-    
-    .contact h3, .interests h3 {
-        padding-bottom: 0;
         font-size: 7vw;
     }
+
+    .contact h3, .interests h3 {
+        font-size: 7vw;
+    }
+
     .contact p, .interests p {
         font-size: 5vw;
-        display: flex;
-        flex-wrap: wrap;
     }
+
     .main {
         padding: 6px;
         width: 60%;
-        box-sizing: border-box;
     }
-    #email{
-        overflow-x: auto;
-    }
-    #tech{
-        overflow-x: auto;
-    }
-  }
-
-  @media print{
- #nav{
-    display: none;
- }
-    .resume *{
-    display: block;
-  }
-#print{
-    display: none;
 }
-  }
+
+@media print {
+    #nav {
+        display: none;
+    }
+
+    .resume * {
+        display: block;
+    }
+
+    .buttons {
+        display: none;
+    }
+}
