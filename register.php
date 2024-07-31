@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_SESSION['otp']) && isset($_SESSION['otp_email'])) {
             $storedOtp = $_SESSION['otp'];
             $storedEmail = $_SESSION['otp_email'];
- 
+
             if ($email == $storedEmail && $enteredOtp == $storedOtp) {
                 // Data entry code
                 $dbname = 'Job_Portal';
@@ -54,23 +54,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $email = $conn->real_escape_string($_POST['email'] ?? '');
                 $password = $conn->real_escape_string($_POST['password'] ?? '');
 
-                // Hash the password
-                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-
-                $stmt = $conn->prepare("INSERT INTO Job_Seekers (name, mobile, email, password) VALUES (?, ?, ?, ?)");
+                // Check if email already exists
+                $stmt = $conn->prepare("SELECT * FROM Job_Seekers WHERE email = ?");
                 if ($stmt) {
-                    $stmt->bind_param("ssss", $name, $mobile, $email, $hashedPassword);
+                    $stmt->bind_param("s", $email);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
 
-                    if ($stmt->execute()) {
-                        echo "Registration successful!";
-                        unset($_SESSION['otp']);
-                        unset($_SESSION['otp_email']);
+                    if ($result->num_rows > 0) {
+                        // Email already registered
+                        echo "Email already registered!";
                     } else {
-                        echo "Error executing statement: " . $stmt->error;
-                    }
+                        // Email not found, proceed with registration
+                        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                    $stmt->close();
+                        $stmt = $conn->prepare("INSERT INTO Job_Seekers (name, mobile, email, password) VALUES (?, ?, ?, ?)");
+                        if ($stmt) {
+                            $stmt->bind_param("ssss", $name, $mobile, $email, $hashedPassword);
+
+                            if ($stmt->execute()) {
+                                echo "Registration successful!";
+                                unset($_SESSION['otp']);
+                                unset($_SESSION['otp_email']);
+                            } else {
+                                echo "Error executing statement: " . $stmt->error;
+                            }
+
+                            $stmt->close();
+                        } else {
+                            echo "Error preparing statement: " . $conn->error;
+                        }
+                    }
                 } else {
                     echo "Error preparing statement: " . $conn->error;
                 }
