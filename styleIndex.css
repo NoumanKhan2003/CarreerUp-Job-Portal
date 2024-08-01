@@ -40,8 +40,7 @@ padding-left: 1rem;
 .logout-button {
     color: white;
     background-color: red;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 2rem;
 }
 
 .logout-button:hover {
@@ -68,7 +67,14 @@ margin-left:0rem ;
 }
 
 @media only screen and (max-width: 700px){
-   
+    .logout-button {
+        color: white;
+        background-color: red;
+        border-radius: 2rem;
+        margin: auto;
+        padding: 10px 20px;
+        width: fit-content;
+    }
     .buttons{
 margin: auto;
 display: flex;

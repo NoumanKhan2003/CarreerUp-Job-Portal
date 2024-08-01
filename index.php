@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                       
                         <?php
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                            echo '<li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>';
                             echo '<li class="nav-item"><a class="nav-link logout-button" href="logout.php">Logout</a></li>';
                         } else {
                             echo '<div class="nav-buttons">
