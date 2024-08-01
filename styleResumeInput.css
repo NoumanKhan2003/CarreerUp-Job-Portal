@@ -1,16 +1,24 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #fffde758;
+    padding: 0px;
+    margin: 0px;
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-image: url("https://img.freepik.com/free-photo/office-supplies-with-keyboard-gray-desk_23-2148052624.jpg?t=st=1722444772~exp=1722448372~hmac=227b730ace2ccaf498f18e2d3f7a1fab54d2d79364a0b5b2cc3be8808dc065ca&w=740"); */
+    background-image: url("https://img.freepik.com/premium-photo/top-view-blue-desk-with-working-equipment-placed-office-copy-space_37714-1238.jpg?w=740");
+    /* background-image: url("https://img.freepik.com/free-photo/top-view-desk-concept-with-gray-background_23-2148236825.jpg"); */
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
 .form-container {
-    background-color: #ffffff;
+    background-color: #fff0b8;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,7 +27,9 @@ main {
 
 h1 {
     text-align: center;
-    color: #461212;
+    color: #a60903;
+    font-weight: 700;
+    /* color: #461212; */
 }
 
 .form-group {
@@ -37,6 +47,7 @@ h1 {
 .form-group input[type="email"],
 .form-group input[type="file"],
 .form-group input[type="number"],
+
 .form-group textarea {
     width: 100%;
     padding: 10px;
