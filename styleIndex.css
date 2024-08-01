@@ -37,6 +37,17 @@ color: white;
 padding-right:1rem ;
 padding-left: 1rem;
 }
+.logout-button {
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.logout-button:hover {
+    background-color: darkred;
+}
+
 #login{
     margin-left: 16rem;
     background-color: rgb(255, 255, 255);

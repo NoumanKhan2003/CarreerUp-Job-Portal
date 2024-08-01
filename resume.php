@@ -117,7 +117,7 @@ if ($conn->query($sql) === TRUE) {
                             window.print();
                         });
                         document.getElementById('home').addEventListener('click', function() {
-                            window.location.href = 'index.html';
+                            window.location.href = 'index.php';
                         });
                     </script>
                 </body>

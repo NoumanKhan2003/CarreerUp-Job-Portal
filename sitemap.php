@@ -8,6 +8,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <?php
+session_start();
+function isLoggedIn() {
+    return isset($_SESSION['user_id']);
+}
+?>
+
 </head>
 <link rel="stylesheet" href="styleSitemap.css">
 <body>
@@ -21,8 +29,8 @@
                 <div class="col-6 col-md-3">
                     <h1 class="sitemap-links-heading">Information</h1>
                     <ul class="sitemap-liks-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php">About Us</a></li>
                         <li><a href="jobs.html">Career with us</a></li>
                         <li><a href="https://github.com/NoumanKhan2003">Contact Us</a></li>
                         <li><a href="terms.html">Terms & Conditions</a></li>
@@ -33,7 +41,7 @@
                     <ul class="sitemap-liks-list">
                         <li><a href="register.html">Register</a></li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href="index.html">Advanced Search</a></li>
+                        <li><a href="index.php">Advanced Search</a></li>
                         <li><a href="jobs.html">Create Job Alert</a></li>
                         <li><a href="privacyPolicy.html">Jobseekers FAQs</a></li>
                     </ul>
@@ -41,20 +49,20 @@
                 <div class="col-6 col-md-3">
                     <h1 class="sitemap-links-heading">Browse Jobs</h1>
                     <ul class="sitemap-liks-list">
-                        <li><a href="index.html">IIM Jobs</a></li>
-                        <li><a href="index.html">IIT Jobs</a></li>
-                        <li><a href="index.html">Government Jobs</a></li>
-                        <li><a href="index.html">International Jobs</a></li>
-                        <li><a href="index.html">Browse Jobs</a></li>
-                        <li><a href="index.html">Browse Jobs by Designation</a></li>
-                        <li><a href="index.html">Browse Jobs by Skill</a></li>
-                        <li><a href="index.html">Browse Jobs by FA/Industry</a></li>
-                        <li><a href="index.html">Browse Jobs by Company</a></li>
-                        <li><a href="index.html">Browse Jobs by Location</a></li>
+                        <li><a href="index.php">IIM Jobs</a></li>
+                        <li><a href="index.php">IIT Jobs</a></li>
+                        <li><a href="index.php">Government Jobs</a></li>
+                        <li><a href="index.php">International Jobs</a></li>
+                        <li><a href="index.php">Browse Jobs</a></li>
+                        <li><a href="index.php">Browse Jobs by Designation</a></li>
+                        <li><a href="index.php">Browse Jobs by Skill</a></li>
+                        <li><a href="index.php">Browse Jobs by FA/Industry</a></li>
+                        <li><a href="index.php">Browse Jobs by Company</a></li>
+                        <li><a href="index.php">Browse Jobs by Location</a></li>
                     </ul>
                     <h1 class="sitemap-links-heading">CarrierUp Navigator</h1>
                     <ul class="sitemap-liks-list">
-                        <li><a href="index.html">Career Navigator</a></li>
+                        <li><a href="index.php">Career Navigator</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3">

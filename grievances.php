@@ -73,8 +73,7 @@ $sql = "INSERT INTO grievances (name, email, number, portal, url, reason, descri
 VALUES ('$name', '$email', '$number', '$portal', '$url', '$reason', '$description', '$file')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Grievance submitted successfully.";
-    header("refresh:2;url=index.html");
+    header("refresh:1;url=index.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

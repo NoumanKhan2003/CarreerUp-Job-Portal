@@ -34,8 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$name', '$email', '$issue_type', '$description')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Issue reported successfully. You will be redirected to the index page in 2 seconds.";
-        header("refresh:2;url=index.html");
+        header("refresh:1;url=index.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

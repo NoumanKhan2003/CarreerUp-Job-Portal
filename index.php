@@ -1,50 +1,55 @@
+<?php
+include "config.php";
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarrierUp.com</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z4G4fA7+7DXt659Q6S/ahlWXIC/0mV5QVF3l0uFI0Rt66r9wBorAI7p6SB6b7R9gqxD0yIrO0DkF1cJ55n1Yq/0"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <script src="index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z4G4fA7+7DXt659Q6S/ahlWXIC/0mV5QVF3l0uFI0Rt66r9wBorAI7p6SB6b7R9gqxD0yIrO0DkF1cJ55n1Yq/0" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js"></script>
     <link rel="stylesheet" href="styleIndex.css">
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <p class="navbar-brand"> <img src="pics/carrierup.png" alt="CarrierUp" id="img1"></p>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="login.html">Jobs</a>
+                            <a class="nav-link active" aria-current="page" href="jobs.html">Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Events</a>
+                            <a class="nav-link" href="events.html">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Resume</a>
+                            <a class="nav-link" href="resumeInput.html">Resume</a>
                         </li>
-
-                        <div class="nav-buttons">
-                        <a href="login.html"><button type="button" class="buttons" id="login">Login</button></a>
-                        <a href="register.html"><button type="button" class="buttons" id="register">Register</button></a></div>
-                        <li class="nav-item dropdown">
+                      
+                        <?php
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                            echo '<li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link logout-button" href="logout.php">Logout</a></li>';
+                        } else {
+                            echo '<div class="nav-buttons">
+                                    <a href="login.html"><button type="button" class="buttons" id="login">Login</button></a>
+                                    <a href="register.html"><button type="button" class="buttons" id="register">Register</button></a>
+                                    
+                                  </div>';
+                                  echo'<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 For Employers
@@ -53,27 +58,25 @@
                                 <li><a class="dropdown-item" href="employerRegister.html">Employer Registration</a></li>
                                 <li><a class="dropdown-item" href="employerLogin.html">Employer Login</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="login.html"><i class="fa fa-user-circle-o" ></i></a>
-                        </li>                   
-                     </ul>
+                        </li>';
+                        }
+                        ?>
+                       
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-
     <main>
         <h1>Find your dream job now</h1>
         <h3>2 lakhs+ jobs for you to explore</h3>
-       <form action="search.html">
         <div id="search-container">
             <div class="search-bar">
                 <div class="icon"></div>
-                <input type="text" placeholder="Enter skills / companies" required>
+                <input type="text" placeholder="Enter skills / companies">
                 <div class="divider"></div>
-                <select title="experience" name="experience" id="experience" required>
+                <select title="experience" name="experience" id="experience">
                     <option class="options">Select experience</option>
                     <option class="options">0-1 years</option>
                     <option class="options">1-3 years</option>
@@ -81,11 +84,11 @@
                     <option class="options">5+ years</option>
                 </select>
                 <div class="divider"></div>
-                <input type="text" placeholder="Enter location" required>
-                <button type="submit" >Search</button>
+                <input type="text" placeholder="Enter location">
+                <button>Search</button>
             </div>
         </div>
-    </form>
+
         <h4>Top Companies Hiring Now</h4>
         <div id="carouselExampleControls" class="carousel">
             <div class="carousel-inner">
@@ -209,7 +212,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="view-all-comp"><a href="login.html"><button type="button" class="button">View all Companies</button></a></div>
+        <div class="view-all-comp"><button type="button" class="button">View all Companies</button></div>
 
         <div class="container my-5">
             <h2>Upcoming events and challenges</h2>
@@ -327,24 +330,24 @@
                         <ul class="list-unstyled">
                             <li><a href="https://www.infoedge.in/">About us</a></li>
                             <li><a href="https://careers.infoedge.com/#!/">Careers</a></li>
-                            <li><a href="employerLogin.html">Employer home</a></li>
-                            <li><a href="login.html">Sitemap</a></li>
+                            <li><a href="#">Employer home</a></li>
+                            <li><a href="sitemap.php">Sitemap</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
-                            <li><a href="login.html">Feedback</a></li>
-                            <li><a href="login.html">Summons/Notices</a></li>
-                            <li><a href="login.html">Grievances</a></li>
-                            <li><a href="login.html">Report issue</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                            <li><a href="#">Summons/Notices</a></li>
+                            <li><a href="grievances.html">Grievances</a></li>
+                            <li><a href="report.html">Report issue</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
-                            <li><a href="login.html">Privacy policy</a></li>
-                            <li><a href="login.html">Terms & conditions</a></li>
-                            <li><a href="login.html">Fraud alert</a></li>
-                            <li><a href="login.html">Trust & safety</a></li>
+                            <li><a href="privacyPolicy.html">Privacy policy</a></li>
+                            <li><a href="terms.html">Terms & conditions</a></li>
+                            <li><a href="fraudAlert.html">Fraud alert</a></li>
+                            <li><a href="trustAndSafety.html">Trust & safety</a></li>
                         </ul>
                     </div>
                 </div>
