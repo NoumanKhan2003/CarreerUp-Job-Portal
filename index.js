@@ -36,3 +36,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.getElementById('post-job-button').addEventListener('click', function() {
     window.location.href = 'post-job.html';
 });
+
+

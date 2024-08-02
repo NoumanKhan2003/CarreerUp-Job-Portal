@@ -20,14 +20,14 @@
         .top {
             color: blue;
             padding: 10px;
-           padding-right:5rem;
-           padding-left: 5rem;
+            padding-right: 5rem;
+            padding-left: 5rem;
             border-radius: 10px;
             margin-bottom: 10px;
-            background-color:white;
+            background-color: white;
             margin: auto;
             margin-top: 2rem;
-width: fit-content;
+            width: fit-content;
         }
 
         .card {
@@ -82,40 +82,65 @@ width: fit-content;
 </head>
 
 <body>
-    <h1 class="text-center top">Top Jobs for You</h1>
-    <div class="container">
-        <div class="row">
-        <?php
-include "config.php";
+    <header>
+        <h1 class="text-center top">Top Jobs for You</h1>
+    </header>
+    <main>
+        
 
-$sql = "SELECT id, job_title, company_name, location, job_type, salary, job_description FROM jobs";
-$result = $conn->query($sql);
+            <div class="row">
+                <?php
+                include "config.php";
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo '<div class="col-lg-4 col-md-6 col-sm-12 p-4">';
-        echo '  <div class="card">';
-        echo '    <div class="card-body">';
-        echo '      <h5 class="card-title">'.$row["job_title"].'</h5>';
-        echo '      <p class="card-text">'.$row["job_description"].'</p>';
-        echo '      <p class="card-text"><small class="text-muted">Company: '.$row["company_name"].'</small></p>';
-        echo '      <p class="card-text"><small class="text-muted">Location: '.$row["location"].'</small></p>';
-        echo '      <p class="card-text"><small class="text-muted">Job Type: '.$row["job_type"].'</small></p>';
-        echo '      <p class="card-text"><small class="text-muted">Salary: '.$row["salary"].'</small></p>';
-        echo '      <a href="applyJobs.php?job_id='.$row["id"].'" class="btn btn-primary">Apply Now</a>';
-        echo '    </div>';
-        echo '  </div>';
-        echo '</div>';
-    }
-} else {
-    echo '<p>No jobs found</p>';
-}
+                // Get search parameters
+                $skills = isset($_GET['skills']) ? $_GET['skills'] : '';
+                $jobType = isset($_GET['job-type']) ? $_GET['job-type'] : '';
+                $location = isset($_GET['location']) ? $_GET['location'] : '';
 
-$conn->close();
-?>
+                // Build SQL query with search parameters
+                $sql = "SELECT id, job_title, company_name, location, job_type, salary, job_description FROM jobs WHERE 1=1";
 
+                if (!empty($skills)) {
+                    $sql .= " AND (job_title LIKE '%" . $conn->real_escape_string($skills) . "%' OR company_name LIKE '%" . $conn->real_escape_string($skills) . "%')";
+                }
+
+                if (!empty($jobType)) {
+                    $sql .= " AND job_type = '" . $conn->real_escape_string($jobType) . "'";
+                }
+
+                if (!empty($location)) {
+                    $sql .= " AND location LIKE '%" . $conn->real_escape_string($location) . "%'";
+                }
+
+                $sql .= " ORDER BY job_title ASC"; // Adjust ordering as needed
+
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="col-lg-4 col-md-6 col-sm-12 p-4">';
+                        echo '  <div class="card">';
+                        echo '    <div class="card-body">';
+                        echo '      <h5 class="card-title">' . $row["job_title"] . '</h5>';
+                        echo '      <p class="card-text">' . $row["job_description"] . '</p>';
+                        echo '      <p class="card-text"><small class="text-muted">Company: ' . $row["company_name"] . '</small></p>';
+                        echo '      <p class="card-text"><small class="text-muted">Location: ' . $row["location"] . '</small></p>';
+                        echo '      <p class="card-text"><small class="text-muted">Job Type: ' . $row["job_type"] . '</small></p>';
+                        echo '      <p class="card-text"><small class="text-muted">Salary: ' . $row["salary"] . '</small></p>';
+                        echo '      <a href="applyJobs.php?job_id=' . $row["id"] . '" class="btn btn-primary">Apply Now</a>';
+                        echo '    </div>';
+                        echo '  </div>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo '<p class="text-center">No jobs found for your search criteria.</p>';
+                }
+
+                $conn->close();
+                ?>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
