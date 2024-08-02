@@ -212,7 +212,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="view-all-comp"><button type="button" class="button">View all Companies</button></div>
+        <div class="view-all-comp"><a href="jobs.html"><button type="button" class="button">View all Companies</button></a></div>
 
         <div class="container my-5">
             <h2>Upcoming events and challenges</h2>
@@ -312,6 +312,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 </div>
             </div>
         </div>
+        <div class="view-all-comp"><a href="events.html"><button type="button" class="button">View all Events</button></a></div>
 
         <footer class="footer mt-auto py-3 bg-light">
             <div class="container-footer">
@@ -330,14 +331,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <ul class="list-unstyled">
                             <li><a href="https://www.infoedge.in/">About us</a></li>
                             <li><a href="https://careers.infoedge.com/#!/">Careers</a></li>
-                            <li><a href="#">Employer home</a></li>
+                            <li><a href="employerLogin.html">Employer home</a></li>
                             <li><a href="sitemap.php">Sitemap</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
                             <li><a href="feedback.html">Feedback</a></li>
-                            <li><a href="#">Summons/Notices</a></li>
+                            <li><a href="notice.html">Summons/Notices</a></li>
                             <li><a href="grievances.html">Grievances</a></li>
                             <li><a href="report.html">Report issue</a></li>
                         </ul>
