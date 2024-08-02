@@ -33,3 +33,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         multipleCardCarousel.classList.add('slide');
     }
 });
+document.getElementById('post-job-button').addEventListener('click', function() {
+    window.location.href = 'post-job.html';
+});

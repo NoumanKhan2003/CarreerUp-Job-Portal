@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -13,7 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
-            echo "Login successful. Welcome, " . $user['name'] . "!";
+            $_SESSION['loggedin'] = true;
+            $_SESSION['email'] = $user['email'];
+            header("Location: employerIndex.php");
         } else {
             echo "Invalid email or password.";
         }
