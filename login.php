@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $user['name'];
             $_SESSION['email'] = $user['email'];
-            header("Location: index.php");
+            header("Location: index1.php");
             exit();
         } else {
             echo "Invalid email or password.";

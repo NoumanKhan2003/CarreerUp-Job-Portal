@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "config.php";
 
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
@@ -73,10 +74,13 @@ $sql = "INSERT INTO grievances (name, email, number, portal, url, reason, descri
 VALUES ('$name', '$email', '$number', '$portal', '$url', '$reason', '$description', '$file')";
 
 if ($conn->query($sql) === TRUE) {
-    header("refresh:1;url=index.php");
-} else {
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        header("Location: index1.php");
+    } else {
+        header("Location: index.php");
+    } }
+    else { 
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 $conn->close();
 ?>

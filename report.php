@@ -1,16 +1,14 @@
 <?php
+session_start();
 include 'config.php'; 
 
-// Create database if not exists
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 if ($conn->query($sql) !== TRUE) {
     die("Error creating database: " . $conn->error);
 }
 
-// Select the database
 $conn->select_db($dbname);
 
-// Create table if not exists
 $sql = "CREATE TABLE IF NOT EXISTS Reports(
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -23,7 +21,6 @@ if ($conn->query($sql) !== TRUE) {
     die("Error creating table: " . $conn->error);
 }
 
-// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $email = $conn->real_escape_string($_POST['email']);
@@ -34,8 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$name', '$email', '$issue_type', '$description')";
 
     if ($conn->query($sql) === TRUE) {
-        header("refresh:1;url=index.php");
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        header("Location: index1.php");
     } else {
+        header("Location: index.php");
+    } } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }

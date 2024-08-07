@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session at the beginning
+
 include "config.php";
 
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
@@ -60,13 +62,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssssss", $name, $email, $issues, $url, $reasons, $details, $target_file);
 
     if ($stmt->execute() === TRUE) {
-        header("Location: index.php");
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            header("Location: index1.php");
+        } else {
+            header("Location: index.php");
+        }
+        $stmt->close();
         exit();
+        
     } else {
+        $stmt->close();
         die("Error: " . $stmt->error);
     }
 
-    $stmt->close();
 }
 
 $conn->close();

@@ -34,13 +34,13 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="login.html">Jobs</a>
+                            <a class="nav-link active" aria-current="page" href="jobs.php">Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Events</a>
+                            <a class="nav-link" href="events.php">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Resume</a>
+                            <a class="nav-link" href="resumeInput.html">Resume</a>
                         </li>
                         <?php
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
@@ -79,7 +79,7 @@ session_start();
             $jobType = isset($_GET['job-type']) ? $_GET['job-type'] : '';
             $location = isset($_GET['location']) ? $_GET['location'] : '';
             ?>
-        <form action="login.html" method="get" class="my-4">
+        <form action="jobs.php" method="get" class="my-4">
         <div id="search-container">
         <div class="search-bar">
                     <input type="text" name="skills" class="form-control me-2 mb-2" placeholder="Enter companies" value="<?php echo htmlspecialchars($skills); ?>">
@@ -146,7 +146,7 @@ session_start();
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="view-all-comp"><a href="login.html"><button type="button" class="button">View all Jobs</button></a>
+        <div class="view-all-comp"><a href="jobs.php"><button type="button" class="button">View all Jobs</button></a>
         </div>
 
         <div class="container my-5">
@@ -191,7 +191,7 @@ session_start();
         </div>
     </main>
 
-        <div class="view-all-comp"><a href="login.html"><button type="button" class="button">View all Events</button></a></div>
+        <div class="view-all-comp"><a href="events.php"><button type="button" class="button">View all Events</button></a></div>
 
         <footer class="footer mt-auto py-3 bg-light">
             <div class="container-footer">
@@ -208,15 +208,15 @@ session_start();
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
-                            <li><a href="login.html">About us</a></li>
-                            <li><a href="login.html">Careers</a></li>
+                            <li><a href="https://www.infoedge.in/">About us</a></li>
+                            <li><a href="https://careers.infoedge.com/#!/">Careers</a></li>
                             <li><a href="employerLogin.html">Employer home</a></li>
-                            <li><a href="login.html">Sitemap</a></li>
+                            <li><a href="sitemap.php">Sitemap</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
-                            <li><a href="login.html">Feedback</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
                             <li><a href="notice.html">Summons/Notices</a></li>
                             <li><a href="grievances.html">Grievances</a></li>
                             <li><a href="report.html">Report issue</a></li>
@@ -224,10 +224,10 @@ session_start();
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
-                            <li><a href="login.html">Privacy policy</a></li>
-                            <li><a href="login.html">Terms & conditions</a></li>
-                            <li><a href="login.html">Fraud alert</a></li>
-                            <li><a href="login.html">Trust & safety</a></li>
+                            <li><a href="privacyPolicy.html">Privacy policy</a></li>
+                            <li><a href="terms.html">Terms & conditions</a></li>
+                            <li><a href="fraudAlert.html">Fraud alert</a></li>
+                            <li><a href="trustAndSafety.html">Trust & safety</a></li>
                         </ul>
                     </div>
                 </div>

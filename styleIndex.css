@@ -290,7 +290,10 @@ padding: 2vw 6vw;
 }
   }
   /* Events screen */
-img{}
+#eventPic{
+    height: auto;
+    width: 20rem;
+}
 h2 {
     font-weight: bold;
     margin-bottom: 2rem;
