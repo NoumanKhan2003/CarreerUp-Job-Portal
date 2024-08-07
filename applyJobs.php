@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("issss", $job_id, $name, $mobile, $email, $file_path);
 
             if ($stmt->execute()) {
-                header("Location: index.php"); 
+                header("Location: index1.php"); 
                 exit();
             } else {
                 echo "Error: " . $stmt->error;

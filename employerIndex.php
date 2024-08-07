@@ -3,7 +3,7 @@ include "config.php";
 session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -49,7 +49,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         </li>
                         <?php
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                            echo '<li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>';
                             echo '<li class="nav-item"><a class="nav-link logout-button" href="logout.php">Logout</a></li>';
                         }
                         ?>
@@ -63,7 +62,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="main-container">
             <div class="main-content">
                 <h1>Let's hire your next great candidate in Just a step</h1>
-                <button id="post-job-button">Post a job</button>
+                <a href="postJob.html"><button id="post-job-button">Post a job</button></a>
             </div>
             <div class="picture-container">
                 <img src="pics/job24.jpg" alt="Hiring Image">
@@ -88,7 +87,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <ul class="list-unstyled">
                             <li><a href="https://www.infoedge.in/">About us</a></li>
                             <li><a href="https://careers.infoedge.com/#!/">Careers</a></li>
-                            <li><a href="employerLogin.html">Employer home</a></li>
+                            <li><a href="employerIndex.php">Employer home</a></li>
                             <li><a href="sitemap.php">Sitemap</a></li>
                         </ul>
                     </div>

@@ -24,7 +24,7 @@ $stmt = $conn->prepare("INSERT INTO job_seekers_profiles (name, email, skills, e
 $stmt->bind_param("sssssssssss", $name, $email, $skills, $experience, $education, $certifications, $name, $skills, $experience, $education, $certifications);
 
 if ($stmt->execute()) {
-    header("Location: index.php"); 
+    header("Location: index1.php"); 
     exit();
 } else {
     echo "Error: " . $stmt->error;

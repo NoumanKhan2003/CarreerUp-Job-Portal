@@ -29,8 +29,8 @@ function isLoggedIn() {
                 <div class="col-6 col-md-3">
                     <h1 class="sitemap-links-heading">Information</h1>
                     <ul class="sitemap-liks-list">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="index.php">About Us</a></li>
+                        <li><a href="index1.php">Home</a></li>
+                        <li><a href="index1.php">About Us</a></li>
                         <li><a href="jobs.html">Career with us</a></li>
                         <li><a href="https://github.com/NoumanKhan2003">Contact Us</a></li>
                         <li><a href="terms.html">Terms & Conditions</a></li>
@@ -41,7 +41,7 @@ function isLoggedIn() {
                     <ul class="sitemap-liks-list">
                         <li><a href="register.html">Register</a></li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href="index.php">Advanced Search</a></li>
+                        <li><a href="index1.php">Advanced Search</a></li>
                         <li><a href="jobs.html">Create Job Alert</a></li>
                         <li><a href="privacyPolicy.html">Jobseekers FAQs</a></li>
                     </ul>
@@ -49,20 +49,20 @@ function isLoggedIn() {
                 <div class="col-6 col-md-3">
                     <h1 class="sitemap-links-heading">Browse Jobs</h1>
                     <ul class="sitemap-liks-list">
-                        <li><a href="index.php">IIM Jobs</a></li>
-                        <li><a href="index.php">IIT Jobs</a></li>
-                        <li><a href="index.php">Government Jobs</a></li>
-                        <li><a href="index.php">International Jobs</a></li>
-                        <li><a href="index.php">Browse Jobs</a></li>
-                        <li><a href="index.php">Browse Jobs by Designation</a></li>
-                        <li><a href="index.php">Browse Jobs by Skill</a></li>
-                        <li><a href="index.php">Browse Jobs by FA/Industry</a></li>
-                        <li><a href="index.php">Browse Jobs by Company</a></li>
-                        <li><a href="index.php">Browse Jobs by Location</a></li>
+                        <li><a href="index1.php">IIM Jobs</a></li>
+                        <li><a href="index1.php">IIT Jobs</a></li>
+                        <li><a href="index1.php">Government Jobs</a></li>
+                        <li><a href="index1.php">International Jobs</a></li>
+                        <li><a href="index1.php">Browse Jobs</a></li>
+                        <li><a href="index1.php">Browse Jobs by Designation</a></li>
+                        <li><a href="index1.php">Browse Jobs by Skill</a></li>
+                        <li><a href="index1.php">Browse Jobs by FA/Industry</a></li>
+                        <li><a href="index1.php">Browse Jobs by Company</a></li>
+                        <li><a href="index1.php">Browse Jobs by Location</a></li>
                     </ul>
                     <h1 class="sitemap-links-heading">CarrierUp Navigator</h1>
                     <ul class="sitemap-liks-list">
-                        <li><a href="index.php">Career Navigator</a></li>
+                        <li><a href="index1.php">Career Navigator</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3">

@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("isss", $event_id, $name, $mobile, $email);
 
     if ($stmt->execute()) {
-        header("Location: index.php"); 
+        header("Location: index1.php"); 
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="row d-flex flex-row justify-content-center">
                     <div class="col-12 col-md-6">
                         <div class="registration-form">
-                            <h1 class="registration-form-heading">Apply Here</h1>
+                            <h1 class="registration-form-heading">Enroll for Event</h1>
                             <form id="registrationForm" action="applyevents.php" method="post">
                                 <input type="hidden" name="event_id" value="<?php echo htmlspecialchars($event_id); ?>">
                                 <p class="form-name">Full Name:</p>
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input type="text" class="r-form-fill-box" name="mobile" placeholder="Mobile Number" required>
                                 <p class="form-name">Email:</p>
                                 <input type="email" class="r-form-fill-box" name="email" placeholder="Email" required>
-                                <button type="submit" class="btn btn-primary">Submit Application</button>
+                                <button type="submit" class="btn btn-primary">Submit Enrollment</button>
                             </form>
                         </div>
                     </div>
