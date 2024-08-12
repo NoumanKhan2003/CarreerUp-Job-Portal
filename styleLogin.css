@@ -61,6 +61,11 @@
     text-align: center;
     margin-top: 18px;
 }
+#responseMessage {
+    text-align: center;
+    color: red !important;
+    font-size: 1rem; 
+}
 @media only screen and (max-width: 600px) {
     .registration-submit-button{
         margin: 1vw;

@@ -13,18 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
+
         if (password_verify($password, $user['password'])) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $user['name'];
             $_SESSION['email'] = $user['email'];
-            header("Location: index1.php");
+            echo "login success";
             exit();
-        } else {
-            echo "Invalid email or password.";
         }
-    } else {
-        echo "Invalid email or password.";
     }
+    echo "password or email is invalid";
 
     $stmt->close();
 }

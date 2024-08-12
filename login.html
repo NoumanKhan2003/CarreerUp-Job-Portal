@@ -26,12 +26,13 @@
                     <div class="login-card-background">
                         <div class="login-form">
                             <h1 class="login-form-heading">Login Here</h1>
-                            <form action="login.php" method="post">
+                            <form action="login.php" method="post" id="loginForm">
                                 <p class="form-name">Email : </p>
                                 <input type="email" class="form-fill-box" name="email" placeholder="Email" required >
                                 <p class="form-name">Password : </p>
                                 <input type="password" class="form-fill-box" name="password" placeholder="Password" required>
                                 <a href="forget.html" class="forget-pass">Forgot Password?</a>
+                                <p id="responseMessage"></p>
                                 <div class="button-container">
                                     <button class="registration-submit-button" type="submit">Login</button>
                                     <a href="register.html"> <button class="registration-submit-button" type="button">Register Here</button></a>
@@ -45,4 +46,25 @@
     </div>
 
 </body>
+<script>
+   document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+
+        fetch("login.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            const responseMessage = document.getElementById("responseMessage");
+            if (data.includes("password or email is invalid")) {
+                responseMessage.textContent = "Email or password is invalid";
+            } 
+            else if(data.includes("login success")){
+                window.location.href = "index1.php";  
+            }
+        });
+    });
+</script>
 </html>
