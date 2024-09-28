@@ -50,7 +50,7 @@ if ($conn->query($sql) === TRUE) {
                 echo "
           <html>
                 <head>
-                    <link rel='stylesheet' href='styleResume.css'>
+                    <link rel='stylesheet' href='styleResumeTemplate1.css'>
                 </head>
                 <body>
                     <h1 id='heading'> Resume</h1>

@@ -6,11 +6,11 @@
     <title>Resume Form</title>
     <link rel="stylesheet" href="styleResumeInput.css">
 </head>
-<body>
+<body> 
     <main>
         <div class="form-container">
             <h1>Resume Form</h1>
-            <form action="resume.php" method="post" enctype="multipart/form-data">
+            <form action="resumeTemplate2.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required placeholder="Full Name">
@@ -18,10 +18,6 @@
                 <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="title" required placeholder="Web-Developer">
-                </div>
-                <div class="form-group">
-                    <label for="profilePicture">Profile Picture:</label>
-                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
                 </div>
                 <div class="form-group">
                     <label for="mobile">Mobile:</label>
@@ -50,6 +46,10 @@
                 <div class="form-group">
                     <label for="technologies">Technologies:</label>
                     <textarea id="technologies" name="technologies" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience:</label>
+                    <textarea id="experience" name="experience" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="projects">Projects:</label>

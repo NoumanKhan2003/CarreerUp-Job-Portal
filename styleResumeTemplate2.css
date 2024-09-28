@@ -1,0 +1,194 @@
+
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-container {
+    width: 80%;
+    max-width: 900px; 
+    min-width: 300px;  
+    margin: auto;     
+    margin:  auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #3d0d15;
+}
+
+.header h2 {
+    font-size: 1.5em;
+    color: #555555;
+    margin: 10px 0;
+}
+
+.header .contact-info span {
+    display: block;
+    margin: 5px 0;
+}
+
+.main-content {
+    display: flex;
+    margin-top: 30px;
+}
+
+.left-column, .right-column {
+    width: 48%;
+    margin: 10px;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 20px;
+}
+
+section h3 {
+    color: #0c0314;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1b272d;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.experience-item h4, .experience-item span {
+    display: block;
+}
+
+.experience-item h4 {
+    font-size: 1.2em;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.experience-item ul {
+    margin: 10px 0 0 20px;
+}
+
+.experience-item ul li {
+    line-height: 1.5;
+}
+
+.right-column ul {
+    padding-left: 20px;
+}
+
+.right-column ul li {
+    margin: 5px 0;
+}
+
+
+@media (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+    .resume-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background: #ffffff;
+        padding: 0px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.buttons button {
+    font-size: 1.2rem;
+    background-color: rgb(12, 21, 25);
+    color: rgb(255, 255, 255);
+    border: 2px solid blue;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 5px 1rem;
+}
+
+.buttons button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile img {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .sidebar {
+        width: 40%;
+        padding: 3vw;
+    }
+
+    .resume {
+        width: 100%;
+    }
+
+    .profile h1 {
+        font-size: 8vw;
+        margin-bottom: 4vw;
+    }
+
+    .profile h2 {
+        font-size: 7vw;
+    }
+
+    .contact h3, .interests h3 {
+        font-size: 7vw;
+    }
+
+    .contact p, .interests p {
+        font-size: 5vw;
+    }
+
+    .main {
+        padding: 6px;
+        width: 60%;
+    }
+}
+
+@media print {
+    #nav {
+        display: none;
+    }
+
+    .resume * {
+        display: block;
+    }
+
+    .buttons {
+        display: none;
+    }
+}

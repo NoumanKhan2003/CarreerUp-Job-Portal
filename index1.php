@@ -34,13 +34,13 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="jobs.php">Jobs</a>
+                            <a class="nav-link" aria-current="page" href="jobs.php">Jobs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="events.php">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="resumeInput.html">Resume</a>
+                            <a class="nav-link" href="resumeTemplateSelection.php">Resume</a>
                         </li>
                         <?php
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
