@@ -44,14 +44,20 @@ header #img1 {
 nav{
     width: 100%;
 }
-.navbar {
+.navbar{
     padding: 0;
-    border: none;
-}
-.navbar-brand {
-    padding: 0;
-}
+    border: 1px groove black;
 
+}
+.navbar-brand{
+    margin: 0;
+}
+#img1{
+    height: 3rem;
+    width: 10rem;
+    margin: 0;
+    padding-left: 1rem;
+}
 .nav-item {
     padding-left: 1rem;
 }

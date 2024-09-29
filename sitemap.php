@@ -60,13 +60,13 @@ function isLoggedIn() {
                         <li><a href="index1.php">Browse Jobs by Company</a></li>
                         <li><a href="index1.php">Browse Jobs by Location</a></li>
                     </ul>
-                    <h1 class="sitemap-links-heading">CarrierUp Navigator</h1>
+                    <h1 class="sitemap-links-heading">CareerUp Navigator</h1>
                     <ul class="sitemap-liks-list">
                         <li><a href="index1.php">Career Navigator</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h1 class="sitemap-links-heading">CarrierUp Fast Forward</h1>
+                    <h1 class="sitemap-links-heading">CareerUp Fast Forward</h1>
                     <ul class="sitemap-liks-list">
                         <li><a href="resume.html">Resume Writing</a></li>
                         <li><a href="resume.html">Resume Samples</a></li>
@@ -81,7 +81,7 @@ function isLoggedIn() {
                         <li><a href="">FAQs</a></li>
                         <li><a href="https://github.com/NoumanKhan2003">Contact us</a></li>
                     </ul>
-                    <h1 class="sitemap-links-heading">CarrierUp Learning</h1>
+                    <h1 class="sitemap-links-heading">CareerUp Learning</h1>
                     <ul class="sitemap-liks-list">
                         <li><a href="jobs.html">Online Courses & Certifications</a></li>
                         <li><a href="">Online Courses</a></li>
@@ -90,11 +90,11 @@ function isLoggedIn() {
                     </ul>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h1 class="sitemap-links-heading">CarrierUp Recruiter</h1>
+                    <h1 class="sitemap-links-heading">CareerUp Recruiter</h1>
                     <ul class="sitemap-liks-list">
                         <li><a href="login.html">Register/ Login</a></li>
                     </ul>
-                    <h1 class="sitemap-links-heading">CarrierUp Recruiter</h1>
+                    <h1 class="sitemap-links-heading">CareerUp Recruiter</h1>
                     <ul class="sitemap-liks-list">
                         <li><a href="">Register</a></li>
                         <li><a href="login.html">Login</a></li>
