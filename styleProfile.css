@@ -1,25 +1,107 @@
-body {
-    font-family: 'Roboto', sans-serif;
+html, body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background: #e0f7fa;
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
+
+/* nav bar */
+.navbar{
+    padding: 0;
+    border: 1px groove black;
+
+}
+.navbar-brand{
+    margin: 0;
+}
+#img1{
+    height: 3rem;
+    width: 10rem;
+    margin: 0;
+    padding-left: 1rem;
+}
+.container-fluid{
+    margin: 0;
+    padding: 0rem;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+}
+
+.buttons{
+    margin-right: 1rem;
+    border-radius: 2rem;
+font-size: 1.2rem;
+color: white;
+padding-right:1rem ;
+padding-left: 1rem;
+}
+.logout-button {
+    color: white;
+    background-color: red;
+    border-radius: 2rem;
+}
+
+.logout-button:hover {
+    background-color: darkred;
+}
+
+#login{
+    margin-left: 16rem;
+    background-color: rgb(255, 255, 255);
+    color: blue;
+    border-color: blue;
+}
+#register{
+    background-color: red;
+}
+.dropdown{
+margin-left:0rem ;
+}
+.fa-user-circle-o{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: rgb(16, 11, 72);
+}
+
+@media only screen and (max-width: 700px){
+    .logout-button {
+        color: white;
+        background-color: red;
+        border-radius: 2rem;
+        margin: auto;
+        padding: 10px 20px;
+        width: fit-content;
+    }
+
+    .buttons{
+margin: auto;
+display: flex;
+margin: 2vw;
+width: fit-content;
+}
+.nav-buttons{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+#login{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+}
+
 
 .container {
     width: 90%;
     margin: auto;
     overflow: hidden;
-}
-
-header {
-    background: #446d8f;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
  h1 , h2{
@@ -63,6 +145,7 @@ section {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     margin-bottom: 30px;
+    margin-top: 1rem;
 }
 
 .profile-form:hover {
@@ -150,4 +233,75 @@ section {
     .profile-form {
         margin-bottom: 20px;
     }
+}
+
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+#connect-with-us{
+    padding: 0;
+}
+.footer #p1{
+    font-size: 2rem;
+    margin-left: 1rem;
+    padding: 0;
+}
+.footer p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+#p2{
+    display: flex;
+    justify-content: start;
+padding-left: 1rem;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #007bff;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+.social-icons{
+    margin-left: 1rem;
+}
+.footer .social-icons a {
+    color: #6c757d;
+    font-size: 2rem;
+    margin: 0.8rem;
+}
+
+.footer .social-icons a:hover {
+    color: #041527;
+}
+#img2{
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+.footer h2{
+    font-size: 10vw;
+}
+.footer #p1{
+    display: flex;
+    justify-content: center;
+}
+.footer .social-icons{
+    display: flex;
+    justify-content: center;
+}
 }

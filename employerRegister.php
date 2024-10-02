@@ -15,13 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['otp_email'] = $email;
 
         $subject = "OTP Verification";
-        $message = "Hey $name, your OTP for verification on CarrierUP is $otp";
+        $message = "Hey $name, your OTP for verification on CareerUp is $otp";
         $headers = "From: noumanyt2003@gmail.com";
 
         if (mail($email, $subject, $message, $headers)) {
             echo "OTP sent successfully";
         } else {
-            echo "Error sending OTP: " . error_get_last()['message'];
+            echo "Error sending OTP";
         }
     } 
     // Check if it's an OTP verification request

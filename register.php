@@ -3,9 +3,7 @@ session_start();
 include("config.php");
 error_log(print_r($_POST, true));
 
-// OTP sending code
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if it's an OTP sending request
     if (isset($_POST['email']) && isset($_POST['name']) && empty($_POST['otp'])) {
         $email = $conn->real_escape_string($_POST['email']);
         $name = $conn->real_escape_string($_POST['name']);
@@ -15,17 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['otp_email'] = $email;
 
         $subject = "OTP Verification";
-        $message = "Hey $name, your OTP for verification on CarrierUP is $otp";
+        $message = "Hey $name, your OTP for verification on CareerUp is $otp";
         $headers = "From: noumanyt2003@gmail.com";
 
         if (mail($email, $subject, $message, $headers)) {
             echo "OTP sent successfully";
         } else {
-            echo "Error sending OTP: " . error_get_last()['message'];
+            echo "Please Enter the OTP";
         }
     } 
 
-    // Check if it's an OTP verification request
     elseif (isset($_POST['otp']) && isset($_POST['email'])) {
         $email = $conn->real_escape_string($_POST['email']);
         $enteredOtp = $_POST['otp'];
@@ -35,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $storedEmail = $_SESSION['otp_email'];
 
             if ($email == $storedEmail && $enteredOtp == $storedOtp) {
-                // Data entry code
                 $dbname = 'Job_Portal';
                 $conn->query("CREATE DATABASE IF NOT EXISTS $dbname");
                 $conn->select_db($dbname);
@@ -49,13 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                 )");
 
-                // Initialize variables
                 $name = $conn->real_escape_string($_POST['name'] ?? '');
                 $mobile = $conn->real_escape_string($_POST['mobile'] ?? '');
                 $email = $conn->real_escape_string($_POST['email'] ?? '');
                 $password = $conn->real_escape_string($_POST['password'] ?? '');
 
-                // Check if email already exists
                 $stmt = $conn->prepare("SELECT * FROM Job_Seekers WHERE email = ?");
                 if ($stmt) {
                     $stmt->bind_param("s", $email);
@@ -63,10 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $result = $stmt->get_result();
 
                     if ($result->num_rows > 0) {
-                        // Email already registered
                         echo "Email already registered!";
                     } else {
-                        // Email not found, proceed with registration
                         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                         $stmt = $conn->prepare("INSERT INTO Job_Seekers (name, mobile, email, password) VALUES (?, ?, ?, ?)");

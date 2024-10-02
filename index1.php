@@ -82,7 +82,7 @@ session_start();
         <form action="jobs.php" method="get" class="my-4">
         <div id="search-container">
         <div class="search-bar">
-                    <input type="text" name="skills" class="form-control me-2 mb-2" placeholder="Enter Job Title" value="<?php echo htmlspecialchars($skills); ?>">
+                    <input type="text" name="skills" class="form-control me-2 mb-2" placeholder="Job Title/Company" value="<?php echo htmlspecialchars($skills); ?>">
                     <div class="divider"></div>
                     <select name="job-type" class="form-select me-2 mb-2">
                         <option value="">Select Job Type</option>

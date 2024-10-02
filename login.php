@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $user['name'];
             $_SESSION['email'] = $user['email'];
+            $_SESSION['role'] = 'job_seeker';
+
             echo "login success";
             exit();
         }

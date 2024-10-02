@@ -1,5 +1,121 @@
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* nav bar */
+.navbar{
+    padding: 0;
+    border: 1px groove black;
+
+}
+.navbar-brand{
+    margin: 0;
+}
+#img1{
+    height: 3rem;
+    width: 10rem;
+    margin: 0;
+    padding-left: 1rem;
+}
+.container-fluid{
+    margin: 0;
+    padding: 0rem;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item{
+    padding-left: 1rem;
+}
+.buttons{
+    margin-right: 1rem;
+    border-radius: 2rem;
+font-size: 1.2rem;
+color: rgb(0, 0, 0);
+padding-right:1rem ;
+padding-left: 1rem;
+background-color: white;
+font-weight: bold;
+border-width: 0.2rem;
+border-color: black;
+border-style: solid;
+
+}
+.buttons:hover{
+background-color: black;
+color: white;
+border-color: white;
+border-style: solid;
+}
+.logout-button {
+    color: white;
+    background-color: red;
+    border-radius: 2rem;
+}
+
+.logout-button:hover {
+    background-color: darkred;
+}
+
+#login{
+    margin-left: 16rem;
+    background-color: rgb(255, 255, 255);
+    color: blue;
+    border-color: blue;
+}
+#register{
+    background-color: red;
+}
+.dropdown{
+margin-left:0rem ;
+}
+.fa-user-circle-o{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: rgb(16, 11, 72);
+}
+
+@media only screen and (max-width: 700px){
+    .logout-button {
+        color: white;
+        background-color: red;
+        border-radius: 2rem;
+        margin: auto;
+        padding: 10px 20px;
+        width: fit-content;
+    }
+    .buttons{
+margin: auto;
+display: flex;
+margin: 2vw;
+width: fit-content;
+}
+.nav-buttons{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+#login{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+}
+
+
 .registration-page-background {
-    background-image: url("https://img.freepik.com/premium-photo/keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg");
+    background-image: url("pics/bgRegister.webp");
     background-size: cover;
     display: flex;
     align-items: center;
@@ -10,7 +126,7 @@
 
 .registration-form {
     background-color: #cdcfd1;
-    border-width: 0px;
+    border-width: 0px; 
     padding: 10px;
     border-radius: 10px;
 }
@@ -18,7 +134,7 @@
 .registration-form-heading {
     color: #943835;
     font-family: sans-serif;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
     text-decoration: underline;
@@ -59,9 +175,88 @@
     font-size: 2rem;
     font-weight: bold;
 }
-
-@media only screen and (max-width: 600px) {
+#registerBox{
+    transition: transform 0.3s;
+}
+#registerBox:hover{
+transform: scale(1.05);
+}
+@media only screen and (max-width: 700px) {
     #message {
         font-size: 9vw;
     }
+    .r-registration-submit-button{
+        margin-top: 1rem;
+    }
+}
+
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+#connect-with-us{
+    padding: 0;
+}
+.footer #p1{
+    font-size: 2rem;
+    margin-left: 1rem;
+    padding: 0;
+}
+.footer p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+#p2{
+    display: flex;
+    justify-content: start;
+padding-left: 1rem;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #007bff;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+.social-icons{
+    margin-left: 1rem;
+}
+.footer .social-icons a {
+    color: #6c757d;
+    font-size: 2rem;
+    margin: 0.8rem;
+}
+
+.footer .social-icons a:hover {
+    color: #041527;
+}
+#img2{
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+.footer h2{
+    font-size: 10vw;
+}
+.footer #p1{
+    display: flex;
+    justify-content: center;
+}
+.footer .social-icons{
+    display: flex;
+    justify-content: center;
+}
 }

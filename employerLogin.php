@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $user['email'];
+            $_SESSION['role'] = 'employer';
             header("Location: employerIndex.php");
         } else {
             echo "Invalid email or password.";

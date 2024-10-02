@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->num_rows > 0) {
             $message = "This mobile number exists in employers.";
-        } else {
+        } else{
             $message = "This mobile number does not exist.";
         }
     }
